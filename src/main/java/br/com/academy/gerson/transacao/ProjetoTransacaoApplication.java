@@ -1,13 +1,13 @@
-package br.com.academy.gerson.projetotransacao;
+package br.com.academy.gerson.transacao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjetotransacaoApplication {
+public class ProjetoTransacaoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjetotransacaoApplication.class, args);
+		SpringApplication.run(ProjetoTransacaoApplication.class, args);
 	}
 
 }
