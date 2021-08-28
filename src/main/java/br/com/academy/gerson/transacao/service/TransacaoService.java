@@ -22,7 +22,7 @@ public class TransacaoService {
 	@Transactional
 	public void salvarTransacao(ModelTransacao modelTransacao) {
 		
-		Transacao transacao = modelTransacao.toModel();
+		Transacao transacao = modelTransacao.toModel(em);
 		
 		em.persist(transacao);
 		

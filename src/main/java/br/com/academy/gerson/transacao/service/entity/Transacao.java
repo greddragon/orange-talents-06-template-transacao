@@ -22,6 +22,11 @@ public class Transacao {
 	private Cartao cartao;
 
 	private LocalDateTime efetivadaEm;
+	
+	@Deprecated
+	public Transacao() {
+
+	}
 
 	public Transacao(String id, @NotNull Long valor, Estabelecimento estabelecimento,
 			Cartao cartao, String efetivadaEm) {

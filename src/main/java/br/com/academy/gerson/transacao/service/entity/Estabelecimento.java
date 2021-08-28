@@ -18,6 +18,11 @@ public class Estabelecimento {
 	private String cidade;
 	@NotBlank
 	private String endereco;
+	
+	@Deprecated
+	public Estabelecimento() {
+		
+	}
 
 	public Estabelecimento(@NotBlank String nome, @NotBlank String cidade, @NotBlank String endereco) {
 		this.nome = nome;

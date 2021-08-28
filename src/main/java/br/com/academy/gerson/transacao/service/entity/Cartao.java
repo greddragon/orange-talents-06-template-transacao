@@ -1,8 +1,6 @@
 package br.com.academy.gerson.transacao.service.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
@@ -10,12 +8,15 @@ import javax.validation.constraints.NotBlank;
 public class Cartao {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	@NotBlank
 	private String idCartao;
 	@NotBlank
 	private String email;
+
+	@Deprecated
+	public Cartao() {
+
+	}
 
 	public Cartao(@NotBlank String idCartao, @NotBlank String email) {
 		this.idCartao = idCartao;

@@ -1,5 +1,7 @@
 package br.com.academy.gerson.transacao.kafka.consumer.model;
 
+import javax.persistence.EntityManager;
+
 import br.com.academy.gerson.transacao.service.entity.Cartao;
 import br.com.academy.gerson.transacao.service.entity.Estabelecimento;
 import br.com.academy.gerson.transacao.service.entity.Transacao;
@@ -34,9 +36,15 @@ public class ModelTransacao {
 		return efetivadaEm;
 	}
 
-	public Transacao toModel() {
+	public Transacao toModel(EntityManager em) {
+		
+		Cartao cartaoEntity = em.find(Cartao.class, this.cartao.getId());
+		
+		if(cartaoEntity == null) {
+			cartaoEntity = new Cartao(cartao.getId(), cartao.getEmail());
+		}
+		
 		Estabelecimento estabelecimentoEntity = new Estabelecimento(estabelecimento.getNome(), estabelecimento.getCidade(), estabelecimento.getCidade());
-		Cartao cartaoEntity = new Cartao(cartao.getId(), cartao.getEmail());
 		return new Transacao(id, valor, estabelecimentoEntity, cartaoEntity, efetivadaEm);
 	}
 
