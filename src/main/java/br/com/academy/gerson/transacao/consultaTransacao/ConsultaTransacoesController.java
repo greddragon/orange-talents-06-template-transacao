@@ -20,7 +20,7 @@ import br.com.academy.gerson.transacao.repository.TransacaoRepository;
 import br.com.academy.gerson.transacao.service.entity.Transacao;
 
 @RestController
-@RequestMapping("/consultacartao")
+@RequestMapping("api/consultacartao")
 public class ConsultaTransacoesController {
 
 	Logger log = LoggerFactory.getLogger(getClass());
